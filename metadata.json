@@ -1,0 +1,6 @@
+{
+  "name": "English Ms Trang - Hệ thống Ngoại ngữ Pallas",
+  "description": "Hệ thống Ngoại ngữ Pallas - English Ms Trang tại Hải Phòng. Xây nền từ móng, chinh phục đỉnh cao. Đồng hành cùng học sinh chinh phục tiếng Anh và Tiếng Trung với đội ngũ giáo viên tận tâm, lộ trình phù hợp từng học viên.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
