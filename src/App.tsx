@@ -166,13 +166,13 @@ export default function App() {
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection("home")}>
             <img 
               src={logoUrl} 
-              alt="English Ms Trang Logo" 
+              alt="Trung Tâm Ngoại Ngữ Pallas Logo" 
               className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover shadow-sm border-2 border-primary/20"
               referrerPolicy="no-referrer"
             />
             <div className="flex flex-col leading-none">
-              <span className="font-lexend text-lg md:text-xl font-bold text-primary">English Ms Trang</span>
-              <span className="text-[10px] font-semibold text-on-surface-variant tracking-wider uppercase">Ngoại ngữ Pallas</span>
+              <span className="font-lexend text-lg md:text-xl font-bold text-primary">Trung Tâm Ngoại Ngữ Pallas</span>
+              <span className="text-[10px] font-semibold text-on-surface-variant tracking-wider uppercase">TRUNG TÂM NGOẠI NGỮ PALLAS</span>
             </div>
           </div>
           
@@ -264,7 +264,7 @@ export default function App() {
               >
                 <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full w-fit mx-auto lg:mx-0 border border-white/20">
                   <Sparkles className="w-4 h-4 text-yellow-300" />
-                  <span className="text-xs md:text-sm font-bold uppercase tracking-wider">Hệ thống Ngoại ngữ Pallas - Hải Phòng</span>
+                  <span className="text-xs md:text-sm font-bold uppercase tracking-wider">Trung Tâm Ngoại Ngữ Pallas - Hải Phòng</span>
                 </div>
                 
                 <h1 className="font-lexend text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -321,7 +321,7 @@ export default function App() {
                 <div className="max-w-[480px] md:max-w-[550px] lg:max-w-[600px] rounded-[3rem] overflow-hidden border-4 border-white/20 shadow-2xl relative bg-white/10">
                   <img 
                     src={msTrangUrl}
-                    alt="Ms Trang - English Ms Trang"
+                    alt="Phan Trang - Trung Tâm Ngoại Ngữ Pallas"
                     className="w-full h-auto object-contain"
                     referrerPolicy="no-referrer"
                   />
@@ -347,7 +347,7 @@ export default function App() {
                 Bạn có đang gặp phải?
               </span>
               <h2 className="font-lexend text-2xl md:text-4xl text-on-surface font-bold leading-tight max-w-3xl">
-                Những <span className="text-primary">khó khăn thường gặp</span> khi học tiếng Anh
+                Những <span className="text-primary">khó khăn thường gặp</span> khi học ngoại ngữ
               </h2>
               <div className="h-1.5 w-20 bg-primary rounded-full"></div>
             </motion.div>
@@ -362,7 +362,7 @@ export default function App() {
                 className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"
               >
                 {[
-                  { icon: "😰", text: "Mất gốc tiếng Anh, không biết bắt đầu học từ đâu" },
+                  { icon: "😰", text: "Mất gốc ngoại ngữ, không biết bắt đầu học từ đâu" },
                   { icon: "😔", text: "Thiếu động lực, mất phương hướng trong việc học" },
                   { icon: "📋", text: "Không có lộ trình học rõ ràng, hiệu quả" },
                   { icon: "📉", text: "Thi nhiều lần nhưng không cải thiện được điểm số" },
@@ -389,7 +389,7 @@ export default function App() {
                   <div className="w-full max-w-[320px] md:max-w-[420px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-white/10">
                     <img 
                       src="https://i.postimg.cc/nhY8C3BN/5a09882e-6f71-46e8-8a9d-6bec491e613e.png"
-                      alt="Ms Trang - Giáo viên English Ms Trang"
+                      alt="Phan Trang - Giáo viên Trung Tâm Ngoại Ngữ Pallas"
                       className="w-full h-auto block"
                       referrerPolicy="no-referrer"
                     />
@@ -421,7 +421,7 @@ export default function App() {
                 Về chúng tôi
               </span>
               <h2 className="font-lexend text-2xl md:text-4xl lg:text-5xl text-on-surface font-bold leading-tight">
-                Hệ thống Ngoại ngữ <span className="text-primary">Pallas</span>
+                Trung Tâm Ngoại Ngữ <span className="text-primary">Pallas</span>
               </h2>
               <div className="h-1.5 w-20 bg-primary rounded-full"></div>
             </motion.div>
@@ -433,13 +433,13 @@ export default function App() {
                 className="flex-1 flex flex-col gap-6 text-on-surface-variant leading-relaxed text-base md:text-[17px]"
               >
                 <p className="font-semibold text-on-surface text-lg md:text-xl">
-                  Hệ thống Ngoại ngữ Pallas được xây dựng với sứ mệnh đồng hành cùng học sinh trên hành trình chinh phục tiếng Anh và Tiếng Trung, mở rộng tri thức và nuôi dưỡng những ước mơ hoài bão trong tương lai.
+                  Trung Tâm Ngoại Ngữ Pallas được xây dựng với sứ mệnh đồng hành cùng học sinh trên hành trình chinh phục ngoại ngữ. Hiện tại, Pallas đang phát triển mạnh mẽ chương trình Tiếng Anh, đồng thời mở rộng đào tạo Tiếng Trung và sẽ tiếp tục triển khai thêm nhiều ngôn ngữ khác trong tương lai.
                 </p>
                 <p>
                   Với <strong className="text-primary">2 cơ sở đang hoạt động</strong>, Pallas luôn kiên định với triết lý giáo dục: <strong className="text-primary">lấy học sinh làm trung tâm, lấy chất lượng làm trọng tâm</strong>. Chúng tôi tin rằng mỗi học sinh đều có tiềm năng riêng, và nhiệm vụ của giáo dục không chỉ là truyền đạt kiến thức, mà còn là đánh thức sự tự tin, khơi dậy khát vọng và giúp các con từng bước trưởng thành.
                 </p>
                 <p>
-                  Tại Pallas, tiếng Anh không chỉ là một môn học. Mỗi giờ học là một hành trình để các con được lắng nghe, được khích lệ, được khám phá bản thân và phát triển toàn diện. Chúng tôi không chỉ giúp học sinh cải thiện điểm số, xây dựng nền tảng ngôn ngữ vững chắc, mà còn rèn luyện <strong className="text-secondary">kỹ năng giao tiếp, tư duy chủ động, tinh thần vượt khó</strong> và khả năng tự tin thể hiện mình.
+                  Tại Pallas, ngoại ngữ không chỉ là một môn học. Mỗi giờ học là một hành trình để các con được lắng nghe, được khích lệ, được khám phá bản thân và phát triển toàn diện. Chúng tôi không chỉ giúp học sinh cải thiện điểm số, xây dựng nền tảng ngôn ngữ vững chắc, mà còn rèn luyện <strong className="text-secondary">kỹ năng giao tiếp, tư duy chủ động, tinh thần vượt khó</strong> và khả năng tự tin thể hiện mình.
                 </p>
                 
                 <div className="bg-gradient-to-r from-primary/10 to-transparent p-6 rounded-2xl border-l-4 border-primary">
@@ -458,7 +458,7 @@ export default function App() {
                   { icon: Heart, title: "Tận tâm", desc: "Đội ngũ giáo viên giàu kinh nghiệm, luôn đặt sự tiến bộ của học sinh lên hàng đầu.", color: "bg-red-50 border-red-100" },
                   { icon: Target, title: "Lộ trình cá nhân hóa", desc: "Mỗi học viên được đồng hành bằng một lộ trình phù hợp với trình độ và mục tiêu.", color: "bg-amber-50 border-amber-100" },
                   { icon: ShieldCheck, title: "Chất lượng đảm bảo", desc: "Không chỉ dạy bằng kiến thức mà còn dạy bằng tình yêu thương và trách nhiệm.", color: "bg-emerald-50 border-emerald-100" },
-                  { icon: Languages, title: "Đa ngôn ngữ", desc: "Đào tạo cả Tiếng Anh và Tiếng Trung, giúp học sinh tự tin hội nhập quốc tế.", color: "bg-blue-50 border-blue-100" }
+                  { icon: Languages, title: "Đa ngôn ngữ", desc: "Phát triển mạnh Tiếng Anh, đang mở rộng Tiếng Trung và sẽ triển khai thêm nhiều ngôn ngữ khác.", color: "bg-blue-50 border-blue-100" }
                 ].map((item, i) => (
                   <div key={i} className={`flex items-start gap-4 p-5 rounded-2xl border ${item.color} hover:shadow-lg transition-all duration-300`}>
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm shrink-0">
@@ -484,13 +484,13 @@ export default function App() {
             <motion.div {...fadeInUp} className="flex flex-col gap-4 items-center text-center">
               <span className="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase bg-red-50 px-5 py-2 rounded-full border border-red-100">
                 <Award className="w-4 h-4" />
-                English Ms Trang
+                Trung Tâm Ngoại Ngữ Pallas
               </span>
               <h2 className="font-lexend text-3xl md:text-5xl text-on-surface font-bold tracking-tight">
-                Đồng hành cùng <span className="text-primary">Ms Trang</span>
+                Đồng hành cùng <span className="text-primary">Phan Trang</span>
               </h2>
               <p className="text-on-surface-variant max-w-2xl leading-relaxed mt-2">
-                Với phương châm "Xây nền từ móng, chinh phục đỉnh cao", English Ms Trang mang đến hành trình học tiếng Anh bài bản, hiệu quả và đầy cảm hứng cho mọi lứa tuổi.
+                Với phương châm "Xây nền từ móng, chinh phục đỉnh cao", Trung Tâm Ngoại Ngữ Pallas mang đến hành trình học ngoại ngữ bài bản, hiệu quả và đầy cảm hứng cho mọi lứa tuổi.
               </p>
               <div className="h-1.5 w-24 bg-primary rounded-full mt-1"></div>
             </motion.div>
@@ -506,7 +506,7 @@ export default function App() {
                   <div className="aspect-[3/4] lg:aspect-auto lg:h-full max-h-[600px] overflow-hidden">
                     <img 
                       src={msTrangOriginalUrl} 
-                      alt="Ms Trang - Sáng lập English Ms Trang" 
+                      alt="Phan Trang - Sáng lập Trung Tâm Ngoại Ngữ Pallas" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
@@ -515,7 +515,7 @@ export default function App() {
                   {/* Badge overlay on mobile */}
                   <div className="absolute bottom-6 left-6 lg:hidden">
                     <span className="bg-primary text-white text-xs font-extrabold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
-                      Ms Trang
+                      Phan Trang
                     </span>
                   </div>
                 </div>
@@ -524,13 +524,13 @@ export default function App() {
                 <div className="w-full lg:w-2/3 p-8 md:p-12 flex flex-col justify-center gap-6">
                   <div className="flex flex-col gap-3">
                     <span className="hidden lg:inline-flex bg-primary/10 text-primary text-sm font-black uppercase tracking-widest px-5 py-2.5 rounded-xl w-fit border border-primary/15">
-                      ★ Sáng lập English Ms Trang
+                      ★ Sáng lập Trung Tâm Ngoại Ngữ Pallas
                     </span>
                     <h3 className="font-lexend text-3xl md:text-4xl font-black text-on-surface leading-tight">
-                      Ms Trang
+                      Phan Trang
                     </h3>
                     <p className="text-base md:text-lg text-on-surface-variant font-medium leading-relaxed max-w-lg">
-                      Tại English Ms Trang, mỗi giờ học là một hành trình khám phá – nơi học sinh được lắng nghe, được khích lệ và phát triển toàn diện. Chúng tôi không chỉ dạy tiếng Anh, mà còn truyền cảm hứng để mỗi em tìm thấy niềm đam mê và sự tự tin trên con đường chinh phục tri thức.
+                      Tại Trung Tâm Ngoại Ngữ Pallas, mỗi giờ học là một hành trình khám phá – nơi học sinh được lắng nghe, được khích lệ và phát triển toàn diện. Chúng tôi không chỉ đào tạo Tiếng Anh và Tiếng Trung, mà còn truyền cảm hứng để mỗi em tìm thấy niềm đam mê và sự tự tin trên con đường chinh phục tri thức.
                     </p>
                   </div>
 
@@ -566,7 +566,7 @@ export default function App() {
 
                   <div className="bg-primary/5 rounded-2xl p-5 border border-primary/10 mt-2">
                     <p className="italic text-base md:text-lg font-semibold text-primary leading-relaxed">
-                      "Mỗi học sinh đều có một tiềm năng riêng. Nhiệm vụ của chúng tôi là đánh thức tiềm năng ấy, giúp các em tự tin làm chủ tiếng Anh và sẵn sàng mở cánh cửa bước tới tương lai."
+                      "Mỗi học sinh đều có một tiềm năng riêng. Nhiệm vụ của chúng tôi là đánh thức tiềm năng ấy, giúp các em tự tin làm chủ ngoại ngữ và sẵn sàng mở cánh cửa bước tới tương lai."
                     </p>
                   </div>
                 </div>
@@ -605,14 +605,14 @@ export default function App() {
             {/* Header */}
             <motion.div {...fadeInUp} className="flex flex-col gap-3 items-center text-center">
               <span className="text-primary font-extrabold text-sm tracking-widest uppercase bg-red-50 px-4 py-1.5 rounded-full border border-red-100">
-                TUYỂN SINH CÁC LỚP TIẾNG ANH
+                TUYỂN SINH CÁC LỚP HỌC
               </span>
               <h2 className="font-lexend text-xl sm:text-2xl md:text-3xl lg:text-4xl text-on-surface font-black leading-snug tracking-tight max-w-4xl text-center">
                 Chương trình đào tạo tại <span className="text-primary">Pallas</span>
               </h2>
               <div className="h-1.5 w-24 bg-primary rounded-full mt-2"></div>
               <p className="text-on-surface-variant max-w-2xl text-sm leading-relaxed mt-2">
-                English Ms Trang cung cấp đa dạng các chương trình đào tạo phù hợp với mọi độ tuổi và trình độ, giúp học viên tự tin chinh phục mục tiêu của mình.
+                Trung Tâm Ngoại Ngữ Pallas cung cấp đa dạng các chương trình đào tạo Tiếng Anh và Tiếng Trung phù hợp với mọi độ tuổi và trình độ, giúp học viên tự tin chinh phục mục tiêu của mình.
               </p>
             </motion.div>
 
@@ -665,6 +665,22 @@ export default function App() {
                   desc: "Hệ thống hóa kiến thức ngữ pháp từ cơ bản đến nâng cao, bám sát chương trình SGK mới. Giúp học sinh hiểu sâu, nhớ lâu, làm bài thi đạt điểm cao.",
                   color: "from-emerald-500 to-teal-600"
                 },
+                { 
+                  emoji: "🇨🇳", 
+                  title: "Tiếng Trung cơ bản YCT", 
+                  age: "Tiểu học – THCS",
+                  tagline: "Nền tảng Tiếng Trung cho trẻ em",
+                  desc: "Chương trình Tiếng Trung theo chuẩn YCT (Youth Chinese Test) từ YCT 1 đến YCT 6. Học phát âm chuẩn, làm quen và viết chữ Hán cơ bản, luyện nghe – nói – đọc – viết theo chủ đề gần gũi.",
+                  color: "from-red-600 to-amber-500"
+                },
+                { 
+                  emoji: "📜", 
+                  title: "Tiếng Trung HSK", 
+                  age: "THCS, THPT & Người lớn",
+                  tagline: "Chinh phục chứng chỉ HSK",
+                  desc: "Dành cho học sinh THCS, THPT, sinh viên và người đi làm. Xây dựng vốn từ vựng và ngữ pháp nền tảng, phát triển đồng đều 4 kỹ năng Nghe – Nói – Đọc – Viết, hướng tới chứng chỉ HSK quốc tế.",
+                  color: "from-rose-600 to-red-700"
+                },
               ].map((course, i) => (
                 <motion.div 
                   key={i}
@@ -700,7 +716,7 @@ export default function App() {
             <motion.div {...fadeInUp} className="mt-8">
               <div className="flex flex-col gap-4 items-center text-center mb-10">
                 <h3 className="font-lexend text-2xl md:text-3xl font-bold text-on-surface">
-                  Tại sao nên học tiếng Anh tại <span className="text-primary">Pallas</span>?
+                  Tại sao nên học ngoại ngữ tại <span className="text-primary">Pallas</span>?
                 </h3>
                 <div className="h-1 w-16 bg-primary rounded-full"></div>
               </div>
@@ -798,10 +814,10 @@ export default function App() {
                 <span className="text-xs font-bold uppercase tracking-widest">Công nghệ AI tiên phong</span>
               </div>
               <h2 className="font-lexend text-3xl md:text-5xl text-on-surface font-bold tracking-tight">
-                Ứng dụng công nghệ độc quyền <br className="hidden md:block" /> chỉ có tại <span className="text-primary">English Ms Trang</span>
+                Ứng dụng công nghệ độc quyền <br className="hidden md:block" /> chỉ có tại <span className="text-primary">Trung Tâm Ngoại Ngữ Pallas</span>
               </h2>
               <p className="text-on-surface-variant max-w-2xl leading-relaxed">
-                Trải nghiệm hệ sinh thái học tập hiện đại, giúp tối ưu hóa thời gian và nâng cao hiệu quả kỹ năng tiếng Anh vượt trội.
+                Trải nghiệm hệ sinh thái học tập hiện đại, giúp tối ưu hóa thời gian và nâng cao hiệu quả kỹ năng ngoại ngữ vượt trội.
               </p>
             </motion.div>
 
@@ -955,7 +971,7 @@ export default function App() {
               </h2>
               <div className="h-1.5 w-24 bg-primary rounded-full mb-4"></div>
               <p className="text-on-surface-variant max-w-3xl text-lg leading-relaxed text-center">
-                Khám phá kho tàng kiến thức khổng lồ được English Ms Trang tuyển chọn kỹ lưỡng, giúp bạn tự tin làm chủ tiếng Anh mỗi ngày.
+                Khám phá kho tàng kiến thức khổng lồ được Trung Tâm Ngoại Ngữ Pallas tuyển chọn kỹ lưỡng, giúp bạn tự tin làm chủ ngoại ngữ mỗi ngày.
               </p>
             </motion.div>
 
@@ -1057,6 +1073,30 @@ export default function App() {
                   image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=800",
                   color: "bg-orange-500",
                   icon: Headphones
+                },
+                { 
+                  title: "LUYỆN VIẾT CHỮ HÁN - TIẾNG TRUNG", 
+                  subtitle: "Công cụ luyện viết chữ Hán trực tuyến",
+                  link: "https://hanzicozy.vercel.app/", 
+                  image: "https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&q=80&w=800",
+                  color: "bg-red-600",
+                  icon: PenTool
+                },
+                { 
+                  title: "HỌC TIẾNG TRUNG QUA TRUYỆN SINH ĐỘNG", 
+                  subtitle: "Little Fox Chinese - Mọi trình độ",
+                  link: "https://chinese.littlefox.com/en", 
+                  image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=800",
+                  color: "bg-amber-600",
+                  icon: BookOpen
+                },
+                { 
+                  title: "LUYỆN ĐỌC TIẾNG TRUNG - MANDARIN BEAN", 
+                  subtitle: "Bài đọc từ sơ cấp đến nâng cao",
+                  link: "https://mandarinbean.com/all-lessons/", 
+                  image: "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&q=80&w=800",
+                  color: "bg-rose-500",
+                  icon: BookOpen
                 }
               ].map((res, i) => (
                 <motion.a
@@ -1122,7 +1162,7 @@ export default function App() {
                 Phụ huynh <span className="text-primary">nói gì</span> về chúng tôi?
               </h2>
               <p className="text-on-surface-variant max-w-2xl leading-relaxed text-base md:text-lg">
-                Hàng trăm phụ huynh đã tin tưởng gửi gắm con em tại English Ms Trang. Đây là những chia sẻ chân thật nhất từ chính các gia đình.
+                Hàng trăm phụ huynh đã tin tưởng gửi gắm con em tại Trung Tâm Ngoại Ngữ Pallas. Đây là những chia sẻ chân thật nhất từ chính các gia đình.
               </p>
               <div className="h-1.5 w-24 bg-primary rounded-full"></div>
             </motion.div>
@@ -1301,7 +1341,7 @@ export default function App() {
                 Kết quả <span className="text-primary">thực tế</span> từ học sinh
               </h2>
               <p className="text-on-surface-variant max-w-2xl leading-relaxed text-base md:text-lg">
-                Những con số biết nói – minh chứng rõ ràng nhất cho chất lượng đào tạo tại English Ms Trang.
+                Những con số biết nói – minh chứng rõ ràng nhất cho chất lượng đào tạo tại Trung Tâm Ngoại Ngữ Pallas.
               </p>
               <div className="h-1.5 w-24 bg-primary rounded-full"></div>
             </motion.div>
@@ -1536,8 +1576,8 @@ export default function App() {
                     referrerPolicy="no-referrer"
                   />
                   <div>
-                    <h4 className="font-lexend font-bold text-lg">English Ms Trang</h4>
-                    <p className="text-xs text-white/70 font-semibold">Ngoại ngữ Pallas</p>
+                    <h4 className="font-lexend font-bold text-lg">TRUNG TÂM NGOẠI NGỮ PALLAS</h4>
+                    <p className="text-xs text-white/70 font-semibold">Trung Tâm Đào Tạo Tiếng Anh & Tiếng Trung Hàng Đầu</p>
                   </div>
                 </div>
 
@@ -1583,7 +1623,7 @@ export default function App() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-white/60 font-bold">Fanpage</p>
-                      <p className="text-sm font-bold">English Ms Trang</p>
+                      <p className="text-sm font-bold">Trung Tâm Ngoại Ngữ Pallas</p>
                     </div>
                   </a>
                 </div>
@@ -1608,14 +1648,14 @@ export default function App() {
             <div className="w-28 h-28 bg-white rounded-[2rem] p-3 border-4 border-yellow-400/50 flex items-center justify-center shadow-2xl overflow-hidden">
               <img 
                 src={logoUrl} 
-                alt="English Ms Trang Logo" 
+                alt="Trung Tâm Ngoại Ngữ Pallas Logo" 
                 className="w-full h-full object-contain rounded-xl"
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left mt-2">
-              <h2 className="font-lexend text-2xl font-bold text-yellow-300 tracking-wider uppercase">English Ms Trang</h2>
-              <p className="text-xs font-bold text-white/50 uppercase tracking-widest">Hệ thống Ngoại ngữ Pallas</p>
+              <h2 className="font-lexend text-2xl font-bold text-yellow-300 tracking-wider uppercase">TRUNG TÂM NGOẠI NGỮ PALLAS</h2>
+              <p className="text-xs font-bold text-white/50 uppercase tracking-widest">Đồng hành cùng học sinh chinh phục tri thức</p>
               <p className="text-sm italic font-medium text-white/80 mt-1">"Xây nền từ móng, chinh phục đỉnh cao"</p>
             </div>
           </motion.div>
@@ -1673,7 +1713,7 @@ export default function App() {
                   <Facebook className="w-5 h-5" />
                 </span>
                 <p className="text-sm font-bold group-hover:text-yellow-300 transition-colors">
-                  Fanpage: English Ms Trang
+                  Fanpage: Trung Tâm Ngoại Ngữ Pallas
                 </p>
               </a>
             </div>
@@ -1700,7 +1740,7 @@ export default function App() {
                 <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-yellow-400/50">
                   <img src={logoUrl} alt="Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
-                <span className="text-xs font-bold text-yellow-300 uppercase tracking-widest">English Ms Trang</span>
+                <span className="text-xs font-bold text-yellow-300 uppercase tracking-widest">Trung Tâm Ngoại Ngữ Pallas</span>
               </div>
             </div>
           </motion.div>
@@ -1708,7 +1748,7 @@ export default function App() {
 
         {/* Copyright */}
         <div className="max-w-7xl mx-auto border-t border-white/10 mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-white/40">
-          <p>© 2026 English Ms Trang – Hệ thống Ngoại ngữ Pallas. Đồng hành cùng học sinh chinh phục tri thức.</p>
+          <p>© 2026 Trung Tâm Ngoại Ngữ Pallas. Đồng hành cùng học sinh chinh phục tri thức.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a>
             <a href="#" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>
