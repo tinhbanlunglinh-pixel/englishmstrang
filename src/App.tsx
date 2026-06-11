@@ -502,8 +502,8 @@ export default function App() {
             >
               <div className="flex flex-col lg:flex-row">
                 {/* Photo */}
-                <div className="w-full lg:w-2/5 relative group">
-                  <div className="aspect-[3/4] lg:aspect-auto lg:h-full overflow-hidden">
+                <div className="w-full lg:w-1/3 relative group">
+                  <div className="aspect-[3/4] lg:aspect-auto lg:h-full max-h-[600px] overflow-hidden">
                     <img 
                       src={msTrangOriginalUrl} 
                       alt="Ms Trang - Sáng lập English Ms Trang" 
@@ -521,15 +521,15 @@ export default function App() {
                 </div>
 
                 {/* Content */}
-                <div className="w-full lg:w-3/5 p-8 md:p-12 flex flex-col justify-center gap-6">
+                <div className="w-full lg:w-2/3 p-8 md:p-12 flex flex-col justify-center gap-6">
                   <div className="flex flex-col gap-3">
-                    <span className="hidden lg:inline-flex bg-primary/10 text-primary text-[11px] font-black uppercase tracking-widest px-4 py-2 rounded-xl w-fit border border-primary/15">
+                    <span className="hidden lg:inline-flex bg-primary/10 text-primary text-sm font-black uppercase tracking-widest px-5 py-2.5 rounded-xl w-fit border border-primary/15">
                       ★ Sáng lập English Ms Trang
                     </span>
-                    <h3 className="font-lexend text-2xl md:text-3xl font-black text-on-surface leading-tight">
+                    <h3 className="font-lexend text-3xl md:text-4xl font-black text-on-surface leading-tight">
                       Ms Trang
                     </h3>
-                    <p className="text-sm text-on-surface-variant font-medium leading-relaxed max-w-lg">
+                    <p className="text-base md:text-lg text-on-surface-variant font-medium leading-relaxed max-w-lg">
                       Tại English Ms Trang, mỗi giờ học là một hành trình khám phá – nơi học sinh được lắng nghe, được khích lệ và phát triển toàn diện. Chúng tôi không chỉ dạy tiếng Anh, mà còn truyền cảm hứng để mỗi em tìm thấy niềm đam mê và sự tự tin trên con đường chinh phục tri thức.
                     </p>
                   </div>
@@ -540,8 +540,8 @@ export default function App() {
                         <BookOpen className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <span className="text-xs font-black text-on-surface uppercase tracking-wide">Đa dạng chương trình đào tạo</span>
-                        <p className="text-[11px] font-semibold text-on-surface-variant mt-0.5">Từ Tiếng Anh cơ bản cho trẻ 4 tuổi đến luyện thi IELTS, Cambridge – phù hợp với mọi mục tiêu và lứa tuổi.</p>
+                        <span className="text-sm font-black text-on-surface uppercase tracking-wide">Đa dạng chương trình đào tạo</span>
+                        <p className="text-xs md:text-sm font-semibold text-on-surface-variant mt-0.5">Từ Tiếng Anh cơ bản cho trẻ 4 tuổi đến luyện thi IELTS, Cambridge – phù hợp với mọi mục tiêu và lứa tuổi.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3 bg-red-50/50 p-4 rounded-2xl border border-red-100/40">
@@ -549,8 +549,8 @@ export default function App() {
                         <TrendingUp className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <span className="text-xs font-black text-on-surface uppercase tracking-wide">Lộ trình cá nhân hóa – tiến bộ rõ rệt</span>
-                        <p className="text-[11px] font-semibold text-on-surface-variant mt-0.5">Kiểm tra đầu vào miễn phí, xếp lớp phù hợp trình độ. Theo dõi sát sao và báo cáo tiến độ định kỳ cho phụ huynh.</p>
+                        <span className="text-sm font-black text-on-surface uppercase tracking-wide">Lộ trình cá nhân hóa – tiến bộ rõ rệt</span>
+                        <p className="text-xs md:text-sm font-semibold text-on-surface-variant mt-0.5">Kiểm tra đầu vào miễn phí, xếp lớp phù hợp trình độ. Theo dõi sát sao và báo cáo tiến độ định kỳ cho phụ huynh.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3 bg-red-50/50 p-4 rounded-2xl border border-red-100/40">
@@ -558,14 +558,14 @@ export default function App() {
                         <Brain className="w-4 h-4 text-amber-600" />
                       </div>
                       <div>
-                        <span className="text-xs font-black text-on-surface uppercase tracking-wide">Phương pháp học hiệu quả & sáng tạo</span>
-                        <p className="text-[11px] font-semibold text-on-surface-variant mt-0.5">Kết hợp giữa kỹ thuật siêu trí nhớ, luyện phản xạ giao tiếp và hệ thống hóa ngữ pháp giúp học nhanh – nhớ lâu – tự tin sử dụng.</p>
+                        <span className="text-sm font-black text-on-surface uppercase tracking-wide">Phương pháp học hiệu quả & sáng tạo</span>
+                        <p className="text-xs md:text-sm font-semibold text-on-surface-variant mt-0.5">Kết hợp giữa kỹ thuật siêu trí nhớ, luyện phản xạ giao tiếp và hệ thống hóa ngữ pháp giúp học nhanh – nhớ lâu – tự tin sử dụng.</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="bg-primary/5 rounded-2xl p-5 border border-primary/10 mt-2">
-                    <p className="italic text-sm font-semibold text-primary leading-relaxed">
+                    <p className="italic text-base md:text-lg font-semibold text-primary leading-relaxed">
                       "Mỗi học sinh đều có một tiềm năng riêng. Nhiệm vụ của chúng tôi là đánh thức tiềm năng ấy, giúp các em tự tin làm chủ tiếng Anh và sẵn sàng mở cánh cửa bước tới tương lai."
                     </p>
                   </div>
