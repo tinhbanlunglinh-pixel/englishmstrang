@@ -482,10 +482,10 @@ export default function App() {
         </section>
 
         {/* Ms Trang & Courses Intro Section */}
-        <section className="py-16 md:py-24 px-6 bg-white scroll-mt-20 relative overflow-hidden">
+        <section className="py-12 md:py-16 px-6 bg-white scroll-mt-20 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
           
-          <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
+          <div className="max-w-7xl mx-auto flex flex-col gap-10 relative z-10">
             {/* Section Header */}
             <motion.div {...fadeInUp} className="flex flex-col gap-4 items-center text-center">
               <span className="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase bg-red-50 px-5 py-2 rounded-full border border-red-100">
@@ -605,7 +605,7 @@ export default function App() {
         </section>
 
         {/* Courses Section */}
-        <section id="courses" className="py-16 md:py-24 px-6 bg-gradient-to-b from-red-50/30 to-white scroll-mt-20">
+        <section id="courses" className="py-12 md:py-16 px-6 bg-gradient-to-b from-red-50/30 to-white scroll-mt-20">
           <div className="max-w-7xl mx-auto flex flex-col gap-12">
             
             {/* Header */}
@@ -826,7 +826,7 @@ export default function App() {
                   desc: "Kho tài liệu thông minh & lộ trình cá nhân hóa từ AI giúp bạn nắm bắt kiến thức nhanh hơn 3 lần.",
                   color: "bg-red-600",
                   shadow: "shadow-red-500/30",
-                  link: ""
+                  link: "https://mstranglearning.vercel.app/"
                 },
                 { 
                   icon: PenTool, 
@@ -835,7 +835,7 @@ export default function App() {
                   desc: "Chấm chữa bài viết AI ngay lập tức, sửa lỗi ngữ pháp và gợi ý cách dùng từ nâng cao.",
                   color: "bg-amber-600",
                   shadow: "shadow-amber-500/30",
-                  link: ""
+                  link: "https://mstrangwriting.vercel.app/"
                 },
                 { 
                   icon: MicVocal, 
@@ -844,7 +844,7 @@ export default function App() {
                   desc: "Luyện phát âm chuẩn bản ngữ với AI, nhận phản hồi chi tiết về ngữ điệu và độ trôi chảy.",
                   color: "bg-emerald-600",
                   shadow: "shadow-emerald-500/30",
-                  link: ""
+                  link: "https://mstrangspeak.vercel.app/"
                 }
               ].map((item, i) => (
                 <motion.a
