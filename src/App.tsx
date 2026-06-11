@@ -8,6 +8,13 @@ import { motion, useInView, AnimatePresence } from "motion/react";
 import learningAiImg from "./assets/images/learning_ai.png";
 import writingAiImg from "./assets/images/writing_ai.png";
 import speakingAiImg from "./assets/images/speaking_ai.png";
+import courseEnglishBasic from "./assets/images/course_english_basic.png";
+import courseEnglishLostRoots from "./assets/images/course_english_lost_roots.png";
+import courseEnglishIelts from "./assets/images/course_english_ielts.png";
+import courseEnglishMemory from "./assets/images/course_english_memory.png";
+import courseEnglishGrammar from "./assets/images/course_english_grammar.png";
+import courseChineseYct from "./assets/images/course_chinese_yct.png";
+import courseChineseHsk from "./assets/images/course_chinese_hsk.png";
 import parentHoaiThuImg from "./assets/images/parent_hoai_thu.png";
 import parentPhuongThanhImg from "./assets/images/parent_phuong_thanh.png";
 import parentKhanhVuImg from "./assets/images/parent_khanh_vu.png";
@@ -74,6 +81,8 @@ export default function App() {
 
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeCourseTab, setActiveCourseTab] = useState("all");
+  const [activeResourceTab, setActiveResourceTab] = useState("all");
 
   const menuItems = [
     { id: "home", label: "Trang chủ" },
@@ -156,7 +165,7 @@ export default function App() {
 
   const logoUrl = "https://i.postimg.cc/3xcLr6w5/logo.png";
   const msTrangUrl = "https://i.postimg.cc/bvDJXXKx/9c190c05-ac35-4c80-b144-92dc773b98f9.png";
-  const msTrangOriginalUrl = "https://i.postimg.cc/Vvzy9TMR/06-43-02-10-thg-6-2026.png";
+  const msTrangOriginalUrl = "https://i.postimg.cc/m22cnG51/2a-Obo-Qcp4Apwp4z-W0i-KUxhn-YKTtjx-CRAq-Osj-SAAy.jpg";
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -172,7 +181,6 @@ export default function App() {
             />
             <div className="flex flex-col leading-none">
               <span className="font-lexend text-lg md:text-xl font-bold text-primary">Trung Tâm Ngoại Ngữ Pallas</span>
-              <span className="text-[10px] font-semibold text-on-surface-variant tracking-wider uppercase">TRUNG TÂM NGOẠI NGỮ PALLAS</span>
             </div>
           </div>
           
@@ -487,10 +495,10 @@ export default function App() {
                 Trung Tâm Ngoại Ngữ Pallas
               </span>
               <h2 className="font-lexend text-3xl md:text-5xl text-on-surface font-bold tracking-tight">
-                Đồng hành cùng <span className="text-primary">Phan Trang</span>
+                Cô <span className="text-primary">Phan Trang</span> là người sáng lập và là CEO của Trung tâm
               </h2>
               <p className="text-on-surface-variant max-w-2xl leading-relaxed mt-2">
-                Với phương châm "Xây nền từ móng, chinh phục đỉnh cao", Trung Tâm Ngoại Ngữ Pallas mang đến hành trình học ngoại ngữ bài bản, hiệu quả và đầy cảm hứng cho mọi lứa tuổi.
+                Với tâm huyết khơi dậy niềm đam mê học hỏi, Cô Phan Trang định hướng Pallas trở thành bệ phóng ngoại ngữ toàn diện. Khởi đầu từ thế mạnh vượt trội trong đào tạo Tiếng Anh, Pallas đang bứt phá phát triển Tiếng Trung chất lượng cao và hướng tới hệ sinh thái đa ngôn ngữ chuẩn quốc tế.
               </p>
               <div className="h-1.5 w-24 bg-primary rounded-full mt-1"></div>
             </motion.div>
@@ -524,13 +532,13 @@ export default function App() {
                 <div className="w-full lg:w-2/3 p-8 md:p-12 flex flex-col justify-center gap-6">
                   <div className="flex flex-col gap-3">
                     <span className="hidden lg:inline-flex bg-primary/10 text-primary text-sm font-black uppercase tracking-widest px-5 py-2.5 rounded-xl w-fit border border-primary/15">
-                      ★ Sáng lập Trung Tâm Ngoại Ngữ Pallas
+                      ★ Sáng lập & CEO – TRUNG TÂM NGOẠI NGỮ PALLAS
                     </span>
                     <h3 className="font-lexend text-3xl md:text-4xl font-black text-on-surface leading-tight">
                       Phan Trang
                     </h3>
                     <p className="text-base md:text-lg text-on-surface-variant font-medium leading-relaxed max-w-lg">
-                      Tại Trung Tâm Ngoại Ngữ Pallas, mỗi giờ học là một hành trình khám phá – nơi học sinh được lắng nghe, được khích lệ và phát triển toàn diện. Chúng tôi không chỉ đào tạo Tiếng Anh và Tiếng Trung, mà còn truyền cảm hứng để mỗi em tìm thấy niềm đam mê và sự tự tin trên con đường chinh phục tri thức.
+                      Là người sáng lập và trực tiếp điều hành Trung tâm, tôi luôn kiên định với sứ mệnh mang đến môi trường giáo dục ngoại ngữ bài bản. Tại Pallas, chương trình Tiếng Anh đã khẳng định vị thế vững vàng, song hành cùng sự phát triển mạnh mẽ của bộ môn Tiếng Trung mới ra mắt, hướng tới tương lai triển khai thêm nhiều ngôn ngữ khác nhằm mang lại hành trang đa ngôn ngữ toàn diện nhất cho thế hệ trẻ.
                     </p>
                   </div>
 
@@ -616,13 +624,43 @@ export default function App() {
               </p>
             </motion.div>
 
+            {/* Category Tabs */}
+            <div className="flex justify-center gap-3 md:gap-4 mb-4 flex-wrap">
+              {[
+                { id: "all", label: "Tất cả khóa học", emoji: "🌐" },
+                { id: "english", label: "Khóa học Tiếng Anh", emoji: "🇬🇧" },
+                { id: "chinese", label: "Khóa học Tiếng Trung", emoji: "🇨🇳" }
+              ].map((tab) => {
+                const isActive = activeCourseTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveCourseTab(tab.id)}
+                    className="relative px-5 py-2.5 rounded-full font-lexend font-bold text-xs md:text-sm transition-all duration-300 cursor-pointer flex items-center gap-2 border border-outline-variant/20 shadow-sm bg-white overflow-hidden"
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeCourseTabIndicator"
+                        className="absolute inset-0 bg-primary -z-10"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                    <span className="text-base">{tab.emoji}</span>
+                    <span className={isActive ? "text-white" : "text-on-surface-variant hover:text-primary"}>
+                      {tab.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
             {/* Course Cards */}
             <motion.div 
               variants={stagger}
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {[
                 { 
@@ -631,7 +669,9 @@ export default function App() {
                   age: "Từ 4 đến 18 tuổi",
                   tagline: "Xây nền tảng vững chắc",
                   desc: "Phát triển đồng đều 4 kỹ năng Nghe – Nói – Đọc – Viết theo từng cấp độ. Giúp học sinh xây dựng nền tảng ngôn ngữ vững chắc, tự tin giao tiếp và đạt kết quả cao ở trường.",
-                  color: "from-red-500 to-rose-600"
+                  color: "from-red-500 to-rose-600",
+                  category: "english",
+                  image: courseEnglishBasic
                 },
                 { 
                   emoji: "🚀", 
@@ -639,7 +679,9 @@ export default function App() {
                   age: "Mọi lứa tuổi",
                   tagline: "Lấy lại nền tảng nhanh chóng",
                   desc: "Khóa học đặc biệt dành cho học sinh mất gốc, giúp các em xây dựng lại kiến thức từ nền móng với lộ trình cá nhân hóa và sự đồng hành tận tâm của giáo viên.",
-                  color: "from-orange-500 to-red-500"
+                  color: "from-orange-500 to-red-500",
+                  category: "english",
+                  image: courseEnglishLostRoots
                 },
                 { 
                   emoji: "🎓", 
@@ -647,7 +689,9 @@ export default function App() {
                   age: "Theo trình độ",
                   tagline: "Chinh phục chứng chỉ quốc tế",
                   desc: "Chương trình chuẩn quốc tế, lộ trình bài bản giúp học viên tự tin đạt điểm số mục tiêu trong các kỳ thi chứng chỉ Cambridge và IELTS.",
-                  color: "from-blue-600 to-indigo-600"
+                  color: "from-blue-600 to-indigo-600",
+                  category: "english",
+                  image: courseEnglishIelts
                 },
                 { 
                   emoji: "🧠", 
@@ -655,7 +699,9 @@ export default function App() {
                   age: "1 khóa học",
                   tagline: "Phương pháp ghi nhớ đặc biệt",
                   desc: "Ứng dụng kỹ thuật ghi nhớ khoa học giúp học viên nắm vững 1000 từ vựng chỉ trong 1 khóa. Từ vựng vững – giao tiếp tự tin – làm bài tốt hơn.",
-                  color: "from-purple-500 to-violet-600"
+                  color: "from-purple-500 to-violet-600",
+                  category: "english",
+                  image: courseEnglishMemory
                 },
                 { 
                   emoji: "📖", 
@@ -663,7 +709,9 @@ export default function App() {
                   age: "Tiểu học – THPT",
                   tagline: "Nắm chắc ngữ pháp chuẩn",
                   desc: "Hệ thống hóa kiến thức ngữ pháp từ cơ bản đến nâng cao, bám sát chương trình SGK mới. Giúp học sinh hiểu sâu, nhớ lâu, làm bài thi đạt điểm cao.",
-                  color: "from-emerald-500 to-teal-600"
+                  color: "from-emerald-500 to-teal-600",
+                  category: "english",
+                  image: courseEnglishGrammar
                 },
                 { 
                   emoji: "🇨🇳", 
@@ -671,7 +719,9 @@ export default function App() {
                   age: "Tiểu học – THCS",
                   tagline: "Nền tảng Tiếng Trung cho trẻ em",
                   desc: "Chương trình Tiếng Trung theo chuẩn YCT (Youth Chinese Test) từ YCT 1 đến YCT 6. Học phát âm chuẩn, làm quen và viết chữ Hán cơ bản, luyện nghe – nói – đọc – viết theo chủ đề gần gũi.",
-                  color: "from-red-600 to-amber-500"
+                  color: "from-red-600 to-amber-500",
+                  category: "chinese",
+                  image: courseChineseYct
                 },
                 { 
                   emoji: "📜", 
@@ -679,31 +729,52 @@ export default function App() {
                   age: "THCS, THPT & Người lớn",
                   tagline: "Chinh phục chứng chỉ HSK",
                   desc: "Dành cho học sinh THCS, THPT, sinh viên và người đi làm. Xây dựng vốn từ vựng và ngữ pháp nền tảng, phát triển đồng đều 4 kỹ năng Nghe – Nói – Đọc – Viết, hướng tới chứng chỉ HSK quốc tế.",
-                  color: "from-rose-600 to-red-700"
+                  color: "from-rose-600 to-red-700",
+                  category: "chinese",
+                  image: courseChineseHsk
                 },
-              ].map((course, i) => (
+              ].filter(course => activeCourseTab === "all" || course.category === activeCourseTab).map((course, i) => (
                 <motion.div 
                   key={i}
+                  layout
                   variants={fadeInUp}
-                  className="bg-white p-0 rounded-3xl border border-outline-variant/30 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col overflow-hidden group"
+                  className="bg-white p-0 rounded-[2rem] border border-outline-variant/30 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col overflow-hidden group"
                 >
-                  {/* Color banner */}
-                  <div className={`bg-gradient-to-r ${course.color} p-6 flex items-center gap-4`}>
-                    <span className="text-4xl">{course.emoji}</span>
-                    <div>
+                  {/* Image Banner */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <img 
+                      src={course.image} 
+                      alt={course.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    
+                    {/* Emoji Badge */}
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-sm font-bold w-10 h-10 rounded-2xl flex items-center justify-center shadow-lg border border-black/5">
+                      <span className="text-xl">{course.emoji}</span>
+                    </div>
+
+                    {/* Age Badge */}
+                    <div className="absolute top-4 right-4 bg-primary/95 backdrop-blur-sm text-[10px] uppercase tracking-widest font-black text-white px-3 py-1.5 rounded-full shadow-lg border border-white/20">
+                      {course.age}
+                    </div>
+
+                    {/* Course Title and Tagline */}
+                    <div className="absolute bottom-4 left-6 right-6">
+                      <p className="text-[10px] text-yellow-300 font-black uppercase tracking-wider mb-0.5">{course.tagline}</p>
                       <h3 className="font-lexend font-black text-lg text-white leading-tight">{course.title}</h3>
-                      <p className="text-xs text-white/80 font-bold mt-1">{course.age}</p>
                     </div>
                   </div>
                   
-                  <div className="p-6 flex flex-col gap-3 flex-grow">
-                    <p className="text-xs text-primary font-bold uppercase tracking-wider">{course.tagline}</p>
+                  <div className="p-6 flex flex-col gap-3 flex-grow justify-between">
                     <p className="text-sm text-on-surface-variant font-medium leading-relaxed flex-grow">
                       {course.desc}
                     </p>
                     <button 
                       onClick={() => scrollToSection("register")}
-                      className="flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all mt-2 cursor-pointer"
+                      className="flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all mt-3 cursor-pointer w-fit"
                     >
                       Đăng ký ngay <ChevronRight className="w-4 h-4" />
                     </button>
@@ -975,6 +1046,36 @@ export default function App() {
               </p>
             </motion.div>
 
+            {/* Resources Category Tabs */}
+            <div className="flex justify-center gap-3 md:gap-4 mb-4 flex-wrap">
+              {[
+                { id: "all", label: "Tất cả tài nguyên", emoji: "🌐" },
+                { id: "english", label: "Tài liệu Tiếng Anh", emoji: "🇬🇧" },
+                { id: "chinese", label: "Tài liệu Tiếng Trung", emoji: "🇨🇳" }
+              ].map((tab) => {
+                const isActive = activeResourceTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveResourceTab(tab.id)}
+                    className="relative px-5 py-2.5 rounded-full font-lexend font-bold text-xs md:text-sm transition-all duration-300 cursor-pointer flex items-center gap-2 border border-outline-variant/20 shadow-sm bg-white overflow-hidden"
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeResourceTabIndicator"
+                        className="absolute inset-0 bg-primary -z-10"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                    <span className="text-base">{tab.emoji}</span>
+                    <span className={isActive ? "text-white" : "text-on-surface-variant hover:text-primary"}>
+                      {tab.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
             <motion.div 
               variants={stagger}
               initial="initial"
@@ -989,7 +1090,8 @@ export default function App() {
                   link: "https://www.cambridgeenglish.org/educators-organisations/resources-for-teachers/", 
                   image: "https://i.postimg.cc/WzCpbp3L/tai-xuong-(4).jpg",
                   color: "bg-blue-600",
-                  icon: BookOpen
+                  icon: BookOpen,
+                  category: "english"
                 },
                 { 
                   title: "READING A-Z KIDS", 
@@ -997,7 +1099,8 @@ export default function App() {
                   link: "https://drive.google.com/drive/folders/1CPnjizRBjQ5PEUhAzSwDKq-ZTZcJ_q6r?usp=sharing", 
                   image: "https://i.postimg.cc/3JGH8VRH/tai-xuong.jpg",
                   color: "bg-amber-600",
-                  icon: BookOpen
+                  icon: BookOpen,
+                  category: "english"
                 },
                 { 
                   title: "BỘ TRUYỆN NỔI TIẾNG LITTLE FOX", 
@@ -1005,35 +1108,40 @@ export default function App() {
                   link: "https://www.tienganhchotreem.com/", 
                   image: "https://i.postimg.cc/FsywKs1n/tai-xuong-(3).jpg",
                   color: "bg-amber-500",
-                  icon: BookOpen
+                  icon: BookOpen,
+                  category: "english"
                 },
                 { 
                   title: "MỎ VÀNG MIỄN PHÍ GIÚP BẠN LUYỆN LISTENING - READING - SPEAKING - VOCABULARY MỖI NGÀY", 
                   link: "https://newsinlevels.com/", 
                   image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
                   color: "bg-amber-500",
-                  icon: Sparkles
+                  icon: Sparkles,
+                  category: "english"
                 },
                 { 
                   title: "Web đọc sách MIỄN PHÍ hay không tưởng", 
                   link: "https://readalong.google.com/book/GLOBAL_sw_24768", 
                   image: "https://images.unsplash.com/photo-1512820790803-73c7e9cb5531?auto=format&fit=crop&q=80&w=800",
                   color: "bg-blue-500",
-                  icon: BookOpen
+                  icon: BookOpen,
+                  category: "english"
                 },
                 { 
                   title: "WEBSITE LUYỆN CHÉP CHÍNH TẢ & LUYỆN ĐỌC TIẾNG ANH RẤT HAY CHO NGƯỜI MỚI BẮT ĐẦU", 
                   link: "https://breakingnewsenglish.com/", 
                   image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800",
                   color: "bg-emerald-500",
-                  icon: PenTool
+                  icon: PenTool,
+                  category: "english"
                 },
                 { 
                   title: "LUYỆN FULL 4 KỸ NĂNG", 
                   link: "https://www.eslfast.com/", 
                   image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
                   color: "bg-rose-500",
-                  icon: Zap
+                  icon: Zap,
+                  category: "english"
                 },
                 { 
                   title: "LUYỆN ĐỌC TIẾNG ANH TỪ A1 ĐẾN C1", 
@@ -1041,7 +1149,8 @@ export default function App() {
                   link: "https://shadowingenglish.com", 
                   image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
                   color: "bg-purple-500",
-                  icon: Headphones
+                  icon: Headphones,
+                  category: "english"
                 },
                 { 
                   title: "KHO LUYỆN WRITING TỪ A1 ĐẾN C1", 
@@ -1049,14 +1158,16 @@ export default function App() {
                   link: "https://test-english.com/writing/", 
                   image: "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=800",
                   color: "bg-cyan-500",
-                  icon: PenTool
+                  icon: PenTool,
+                  category: "english"
                 },
                 { 
                   title: "HỌC GIAO TIẾP TỪ A ĐẾN Z", 
                   link: "https://luyengiaotiep.com", 
                   image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800",
                   color: "bg-indigo-500",
-                  icon: MessageCircle
+                  icon: MessageCircle,
+                  category: "english"
                 },
                 { 
                   title: "LUYỆN NGHE CHÉP CHÍNH TẢ HÀNG NGÀY", 
@@ -1064,15 +1175,17 @@ export default function App() {
                   link: "https://dailydictation.com/exercises", 
                   image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=800",
                   color: "bg-teal-500",
-                  icon: Headphones
+                  icon: Headphones,
+                  category: "english"
                 },
                 { 
-                  title: "KHO TÀI NGUYÊN LUYỆN NGHE CỰC LỚN", 
+                  title: "KHO TÀN NGUYÊN LUYỆN NGHE CỰC LỚN", 
                   subtitle: "Từ A1 → C1 - Hàng ngàn bài nghe miễn phí",
                   link: "https://elllo.org/", 
                   image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=800",
                   color: "bg-orange-500",
-                  icon: Headphones
+                  icon: Headphones,
+                  category: "english"
                 },
                 { 
                   title: "LUYỆN VIẾT CHỮ HÁN - TIẾNG TRUNG", 
@@ -1080,7 +1193,8 @@ export default function App() {
                   link: "https://hanzicozy.vercel.app/", 
                   image: "https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&q=80&w=800",
                   color: "bg-red-600",
-                  icon: PenTool
+                  icon: PenTool,
+                  category: "chinese"
                 },
                 { 
                   title: "HỌC TIẾNG TRUNG QUA TRUYỆN SINH ĐỘNG", 
@@ -1088,7 +1202,8 @@ export default function App() {
                   link: "https://chinese.littlefox.com/en", 
                   image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=800",
                   color: "bg-amber-600",
-                  icon: BookOpen
+                  icon: BookOpen,
+                  category: "chinese"
                 },
                 { 
                   title: "LUYỆN ĐỌC TIẾNG TRUNG - MANDARIN BEAN", 
@@ -1096,9 +1211,10 @@ export default function App() {
                   link: "https://mandarinbean.com/all-lessons/", 
                   image: "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&q=80&w=800",
                   color: "bg-rose-500",
-                  icon: BookOpen
+                  icon: BookOpen,
+                  category: "chinese"
                 }
-              ].map((res, i) => (
+              ].filter(res => activeResourceTab === "all" || res.category === activeResourceTab).map((res, i) => (
                 <motion.a
                   key={i}
                   href={res.link}
