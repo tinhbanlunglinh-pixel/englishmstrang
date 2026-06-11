@@ -494,8 +494,8 @@ export default function App() {
                 <Award className="w-4 h-4" />
                 Trung Tâm Ngoại Ngữ Pallas
               </span>
-              <h2 className="font-lexend text-3xl md:text-5xl text-on-surface font-bold tracking-tight">
-                Cô <span className="text-primary">Phan Trang</span> là người sáng lập và là CEO của Trung tâm
+              <h2 className="font-lexend text-3xl md:text-5xl text-on-surface font-bold tracking-tight text-center leading-tight">
+                Cô <span className="text-primary">Phan Trang</span> là người sáng lập <br /> và là CEO của Trung tâm
               </h2>
               <p className="text-on-surface-variant max-w-2xl leading-relaxed mt-2">
                 Với tâm huyết khơi dậy niềm đam mê học hỏi, Cô Phan Trang định hướng Pallas trở thành bệ phóng ngoại ngữ toàn diện. Khởi đầu từ thế mạnh vượt trội trong đào tạo Tiếng Anh, Pallas đang bứt phá phát triển Tiếng Trung chất lượng cao và hướng tới hệ sinh thái đa ngôn ngữ chuẩn quốc tế.
@@ -510,15 +510,14 @@ export default function App() {
             >
               <div className="flex flex-col lg:flex-row">
                 {/* Photo */}
-                <div className="w-full lg:w-1/3 relative group">
-                  <div className="aspect-[3/4] lg:aspect-auto lg:h-full max-h-[600px] overflow-hidden">
+                <div className="w-full lg:w-1/3 relative group bg-white flex items-center justify-center">
+                  <div className="aspect-[3/4] lg:aspect-auto lg:h-full max-h-[600px] overflow-hidden w-full flex items-center justify-center">
                     <img 
                       src={msTrangOriginalUrl} 
                       alt="Phan Trang - Sáng lập Trung Tâm Ngoại Ngữ Pallas" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#5C0A0F]/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-white/10"></div>
                   </div>
                   {/* Badge overlay on mobile */}
                   <div className="absolute bottom-6 left-6 lg:hidden">
