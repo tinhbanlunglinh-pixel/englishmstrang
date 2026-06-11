@@ -259,10 +259,7 @@ export default function App() {
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 md:py-24">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               {/* Left content */}
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+              <div 
                 className="flex-1 flex flex-col gap-6 text-center lg:text-left"
               >
                 <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full w-fit mx-auto lg:mx-0 border border-white/20">
@@ -315,13 +312,10 @@ export default function App() {
                     <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">Học viên</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Right - Ms Trang photo */}
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+              <div 
                 className="flex-shrink-0 relative"
               >
                 <div className="max-w-[480px] md:max-w-[550px] lg:max-w-[600px] rounded-[3rem] overflow-hidden border-4 border-white/20 shadow-2xl relative bg-white/10">
@@ -336,7 +330,7 @@ export default function App() {
                 <div className="absolute -top-3 -right-3 bg-yellow-400 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg rotate-12">
                   <Star className="w-6 h-6 text-white fill-white" />
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
