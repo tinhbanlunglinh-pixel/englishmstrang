@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { motion, useInView, AnimatePresence } from "motion/react";
 import learningAiImg from "./assets/images/learning_ai.png";
 import writingAiImg from "./assets/images/writing_ai.png";
@@ -62,7 +62,9 @@ import {
   ThumbsUp,
   ChevronLeft,
   Facebook,
-  Play
+  Play,
+  Mail,
+  Loader2
 } from "lucide-react";
 
 export default function App() {
@@ -84,6 +86,37 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeCourseTab, setActiveCourseTab] = useState("all");
   const [activeResourceTab, setActiveResourceTab] = useState("all");
+
+  // Form đăng ký - Google Sheets integration
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQxbbmRXm9wY5QAMvGOq9ObFFcw3DNxEDYV_5YaZU3NLsc5ehNf_lwAGcU-P4bKhE/exec';
+
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formData.name.trim() || !formData.phone.trim()) return;
+    
+    setFormStatus('submitting');
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim()
+        })
+      });
+      setFormStatus('success');
+      setFormData({ name: '', phone: '', email: '' });
+      setTimeout(() => setFormStatus('idle'), 4000);
+    } catch {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 4000);
+    }
+  };
 
   const menuItems = [
     { id: "home", label: "Trang chủ" },
@@ -523,23 +556,17 @@ export default function App() {
 
             <motion.div 
               {...fadeInUp}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-black/5 aspect-video group"
+              className="relative w-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl bg-black"
+              style={{ aspectRatio: '16/9' }}
             >
               <iframe
                 src="https://drive.google.com/file/d/1IDmWbDXYA8IjtRC_47eol1bISi60-L6N/preview"
-                width="100%"
-                height="100%"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
-                className="absolute inset-0 w-full h-full"
+                className="absolute top-0 left-0 w-full h-full"
                 style={{ border: 'none' }}
                 title="Video giới thiệu Trung Tâm Ngoại Ngữ Pallas"
               ></iframe>
-              {/* Decorative corners */}
-              <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-primary/30 rounded-tl-[2rem] pointer-events-none"></div>
-              <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-primary/30 rounded-tr-[2rem] pointer-events-none"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-primary/30 rounded-bl-[2rem] pointer-events-none"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-primary/30 rounded-br-[2rem] pointer-events-none"></div>
             </motion.div>
 
             {/* Video caption */}
@@ -1730,23 +1757,72 @@ export default function App() {
                   <div className="h-1.5 w-20 bg-primary rounded-full mt-2"></div>
                 </div>
 
-                <form className="flex flex-col gap-5">
+                <form className="flex flex-col gap-5" onSubmit={handleFormSubmit}>
                   <div className="flex flex-col gap-2 group">
-                    <label className="text-xs font-bold text-primary uppercase tracking-widest px-1">Họ và tên</label>
+                    <label className="text-xs font-bold text-primary uppercase tracking-widest px-1">Họ và tên <span className="text-red-400">*</span></label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-on-surface-variant/40 group-focus-within:text-primary transition-colors" />
-                      <input className="w-full rounded-2xl border border-red-100 focus:border-primary focus:ring-4 focus:ring-primary/5 bg-white py-4 pl-12 pr-4 outline-none transition-all" placeholder="Nguyễn Văn A" type="text" />
+                      <input 
+                        className="w-full rounded-2xl border border-red-100 focus:border-primary focus:ring-4 focus:ring-primary/5 bg-white py-4 pl-12 pr-4 outline-none transition-all" 
+                        placeholder="Nguyễn Văn A" 
+                        type="text" 
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                      />
                     </div>
                   </div>
                   <div className="flex flex-col gap-2 group">
-                    <label className="text-xs font-bold text-primary uppercase tracking-widest px-1">Số điện thoại</label>
+                    <label className="text-xs font-bold text-primary uppercase tracking-widest px-1">Số điện thoại <span className="text-red-400">*</span></label>
                     <div className="relative">
                       <Smartphone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-on-surface-variant/40 group-focus-within:text-primary transition-colors" />
-                      <input className="w-full rounded-2xl border border-red-100 focus:border-primary focus:ring-4 focus:ring-primary/5 bg-white py-4 pl-12 pr-4 outline-none transition-all" placeholder="09xx xxx xxx" type="tel" />
+                      <input 
+                        className="w-full rounded-2xl border border-red-100 focus:border-primary focus:ring-4 focus:ring-primary/5 bg-white py-4 pl-12 pr-4 outline-none transition-all" 
+                        placeholder="09xx xxx xxx" 
+                        type="tel" 
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                      />
                     </div>
                   </div>
-                  <button className="bg-primary text-white font-bold py-5 rounded-2xl w-full shadow-xl shadow-primary/30 hover:bg-secondary hover:-translate-y-1 transition-all active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer" type="submit">
-                    Nhận tư vấn miễn phí <ArrowRight className="w-5 h-5" />
+                  <div className="flex flex-col gap-2 group">
+                    <label className="text-xs font-bold text-primary uppercase tracking-widest px-1">Email</label>
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-on-surface-variant/40 group-focus-within:text-primary transition-colors" />
+                      <input 
+                        className="w-full rounded-2xl border border-red-100 focus:border-primary focus:ring-4 focus:ring-primary/5 bg-white py-4 pl-12 pr-4 outline-none transition-all" 
+                        placeholder="email@example.com" 
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      />
+                    </div>
+                  </div>
+
+                  {formStatus === 'success' && (
+                    <div className="flex items-center gap-2 text-green-600 bg-green-50 border border-green-200 rounded-2xl px-5 py-3 text-sm font-bold animate-pulse">
+                      <CheckCircle2 className="w-5 h-5 shrink-0" />
+                      Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm nhất.
+                    </div>
+                  )}
+                  {formStatus === 'error' && (
+                    <div className="flex items-center gap-2 text-red-600 bg-red-50 border border-red-200 rounded-2xl px-5 py-3 text-sm font-bold">
+                      <X className="w-5 h-5 shrink-0" />
+                      Có lỗi xảy ra. Vui lòng thử lại sau.
+                    </div>
+                  )}
+
+                  <button 
+                    className="bg-primary text-white font-bold py-5 rounded-2xl w-full shadow-xl shadow-primary/30 hover:bg-secondary hover:-translate-y-1 transition-all active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0" 
+                    type="submit"
+                    disabled={formStatus === 'submitting'}
+                  >
+                    {formStatus === 'submitting' ? (
+                      <><Loader2 className="w-5 h-5 animate-spin" /> Đang gửi...</>
+                    ) : (
+                      <>Nhận tư vấn miễn phí <ArrowRight className="w-5 h-5" /></>
+                    )}
                   </button>
                 </form>
               </div>
