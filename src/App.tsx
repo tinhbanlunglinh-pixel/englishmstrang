@@ -69,17 +69,17 @@ import {
 
 export default function App() {
   const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 1, y: 0 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.4 }
   };
 
   const stagger = {
-    initial: { opacity: 0 },
+    initial: { opacity: 1 },
     whileInView: { opacity: 1 },
     viewport: { once: true },
-    transition: { staggerChildren: 0.1 }
+    transition: { staggerChildren: 0.05 }
   };
 
   const [activeSection, setActiveSection] = useState("home");
@@ -556,8 +556,7 @@ export default function App() {
 
             <motion.div 
               {...fadeInUp}
-              className="relative w-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl bg-black"
-              style={{ aspectRatio: '16/9' }}
+              className="relative w-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[9/16] md:aspect-video"
             >
               <iframe
                 src="https://drive.google.com/file/d/1IDmWbDXYA8IjtRC_47eol1bISi60-L6N/preview"
