@@ -61,7 +61,8 @@ import {
   Quote,
   ThumbsUp,
   ChevronLeft,
-  Facebook
+  Facebook,
+  Play
 } from "lucide-react";
 
 export default function App() {
@@ -207,6 +208,15 @@ export default function App() {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://www.facebook.com/share/1CJQEtgc5s/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white transition-all hover:scale-110 shadow-md"
+              title="Facebook Pallas"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
             <button 
               onClick={() => scrollToSection("register")}
               className="flex items-center gap-2 text-sm font-bold text-white bg-primary hover:bg-secondary px-5 py-2.5 rounded-full cursor-pointer shadow-md shadow-primary/20 hover:shadow-lg transition-all active:scale-95"
@@ -240,6 +250,15 @@ export default function App() {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://www.facebook.com/share/1CJQEtgc5s/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 font-bold text-sm py-3 px-4 rounded-xl bg-blue-600 text-white"
+            >
+              <Facebook className="w-4 h-4" />
+              Theo dõi Facebook
+            </a>
             <a 
               href="tel:0979222210"
               className="flex items-center justify-center gap-2 font-bold text-sm py-3 px-4 rounded-xl bg-primary text-white mt-2"
@@ -311,7 +330,7 @@ export default function App() {
                   </div>
                   <div className="w-px h-10 bg-white/20"></div>
                   <div className="flex flex-col items-center lg:items-start">
-                    <span className="font-lexend text-2xl md:text-3xl font-bold text-white">10+</span>
+                    <span className="font-lexend text-2xl md:text-3xl font-bold text-white">15+</span>
                     <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">Năm kinh nghiệm</span>
                   </div>
                   <div className="w-px h-10 bg-white/20"></div>
@@ -483,6 +502,55 @@ export default function App() {
           </div>
         </section>
 
+        {/* Video Giới Thiệu Trung Tâm */}
+        <section className="py-16 md:py-24 px-6 bg-gradient-to-b from-white via-red-50/30 to-white scroll-mt-20 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
+          
+          <div className="max-w-5xl mx-auto relative z-10">
+            <motion.div {...fadeInUp} className="flex flex-col gap-4 items-center text-center mb-12">
+              <span className="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase bg-red-50 px-5 py-2 rounded-full border border-red-100">
+                <Play className="w-4 h-4" />
+                Video giới thiệu
+              </span>
+              <h2 className="font-lexend text-2xl md:text-4xl lg:text-5xl text-on-surface font-bold leading-tight">
+                Khám phá <span className="text-primary">Trung Tâm Ngoại Ngữ Pallas</span>
+              </h2>
+              <p className="text-on-surface-variant max-w-2xl leading-relaxed">
+                Cùng xem video để hiểu hơn về môi trường học tập, phương pháp giảng dạy và những giá trị mà Pallas mang đến cho học viên.
+              </p>
+              <div className="h-1.5 w-20 bg-primary rounded-full"></div>
+            </motion.div>
+
+            <motion.div 
+              {...fadeInUp}
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-black/5 aspect-video group"
+            >
+              <iframe
+                src="https://drive.google.com/file/d/1IDmWbDXYA8IjtRC_47eol1bISi60-L6N/preview"
+                width="100%"
+                height="100%"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 'none' }}
+                title="Video giới thiệu Trung Tâm Ngoại Ngữ Pallas"
+              ></iframe>
+              {/* Decorative corners */}
+              <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-primary/30 rounded-tl-[2rem] pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-primary/30 rounded-tr-[2rem] pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-primary/30 rounded-bl-[2rem] pointer-events-none"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-primary/30 rounded-br-[2rem] pointer-events-none"></div>
+            </motion.div>
+
+            {/* Video caption */}
+            <motion.div {...fadeInUp} className="mt-6 text-center">
+              <p className="text-sm text-on-surface-variant font-semibold italic">
+                🎬 Trung Tâm Ngoại Ngữ Pallas – Nơi tri thức được trao truyền, ước mơ được nuôi dưỡng
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Ms Trang & Courses Intro Section */}
         <section className="py-12 md:py-16 px-6 bg-white scroll-mt-20 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -509,26 +577,32 @@ export default function App() {
               className="bg-gradient-to-br from-white via-white to-red-50/50 rounded-[2.5rem] border border-red-100/40 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
             >
               <div className="flex flex-col lg:flex-row">
-                {/* Photo */}
-                <div className="w-full lg:w-1/3 relative group bg-white flex items-center justify-center">
-                  <div className="aspect-[3/4] lg:aspect-auto lg:h-full max-h-[600px] overflow-hidden w-full flex items-center justify-center">
+                {/* Photo & Quote Column */}
+                <div className="w-full lg:w-1/3 bg-white flex flex-col items-stretch justify-start pt-8 lg:pt-12 pl-6 lg:pl-12 pr-6 lg:pr-0 pb-8 lg:pb-12 gap-5">
+                  <div className="w-full overflow-hidden flex items-start justify-center relative group">
                     <img 
                       src={msTrangOriginalUrl} 
                       alt="Phan Trang - Sáng lập Trung Tâm Ngoại Ngữ Pallas" 
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-auto object-contain object-top group-hover:scale-105 transition-transform duration-700 rounded-3xl border border-outline-variant/10 shadow-sm"
                       referrerPolicy="no-referrer"
                     />
+                    {/* Badge overlay on mobile */}
+                    <div className="absolute bottom-6 left-6 lg:hidden">
+                      <span className="bg-primary text-white text-xs font-extrabold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
+                        Phan Trang
+                      </span>
+                    </div>
                   </div>
-                  {/* Badge overlay on mobile */}
-                  <div className="absolute bottom-6 left-6 lg:hidden">
-                    <span className="bg-primary text-white text-xs font-extrabold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
-                      Phan Trang
-                    </span>
+                  {/* Quote under image */}
+                  <div className="bg-primary/5 rounded-2xl p-5 border border-primary/10 text-center">
+                    <p className="italic text-xs md:text-sm font-semibold text-primary leading-relaxed">
+                      "Mỗi học sinh đều có một tiềm năng riêng. Nhiệm vụ của chúng tôi là đánh thức tiềm năng ấy, giúp các em tự tin làm chủ ngoại ngữ và sẵn sàng mở cánh cửa bước tới tương lai."
+                    </p>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="w-full lg:w-2/3 p-8 md:p-12 flex flex-col justify-center gap-6">
+                <div className="w-full lg:w-2/3 p-8 md:p-12 flex flex-col justify-start gap-6">
                   <div className="flex flex-col gap-3">
                     <span className="hidden lg:inline-flex bg-primary/10 text-primary text-sm font-black uppercase tracking-widest px-5 py-2.5 rounded-xl w-fit border border-primary/15">
                       ★ Sáng lập & CEO – TRUNG TÂM NGOẠI NGỮ PALLAS
@@ -536,32 +610,32 @@ export default function App() {
                     <h3 className="font-lexend text-3xl md:text-4xl font-black text-on-surface leading-tight">
                       Phan Trang
                     </h3>
-                    <p className="text-base md:text-lg text-on-surface-variant font-medium leading-relaxed max-w-lg">
+                    <p className="text-base md:text-lg text-on-surface-variant font-medium leading-relaxed max-w-2xl">
                       Là người sáng lập và trực tiếp điều hành Trung tâm, tôi luôn kiên định với sứ mệnh mang đến môi trường giáo dục ngoại ngữ bài bản. Tại Pallas, chương trình Tiếng Anh đã khẳng định vị thế vững vàng, song hành cùng sự phát triển mạnh mẽ của bộ môn Tiếng Trung mới ra mắt, hướng tới tương lai triển khai thêm nhiều ngôn ngữ khác nhằm mang lại hành trang đa ngôn ngữ toàn diện nhất cho thế hệ trẻ.
                     </p>
                   </div>
 
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-start gap-3 bg-red-50/50 p-4 rounded-2xl border border-red-100/40">
-                      <div className="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="flex flex-col items-start gap-3 bg-red-50/50 p-5 rounded-2xl border border-red-100/40 h-full">
+                      <div className="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                         <BookOpen className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <span className="text-sm font-black text-on-surface uppercase tracking-wide">Đa dạng chương trình đào tạo</span>
-                        <p className="text-xs md:text-sm font-semibold text-on-surface-variant mt-0.5">Từ Tiếng Anh cơ bản cho trẻ 4 tuổi đến luyện thi IELTS, Cambridge – phù hợp với mọi mục tiêu và lứa tuổi.</p>
+                        <span className="text-xs font-black text-on-surface uppercase tracking-wide">Đa dạng chương trình</span>
+                        <p className="text-[11px] font-semibold text-on-surface-variant mt-1.5 leading-relaxed">Từ Tiếng Anh cơ bản cho trẻ 4 tuổi đến luyện thi IELTS, Cambridge – phù hợp với mọi lứa tuổi.</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 bg-red-50/50 p-4 rounded-2xl border border-red-100/40">
-                      <div className="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="flex flex-col items-start gap-3 bg-red-50/50 p-5 rounded-2xl border border-red-100/40 h-full">
+                      <div className="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                         <TrendingUp className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <span className="text-sm font-black text-on-surface uppercase tracking-wide">Lộ trình cá nhân hóa – tiến bộ rõ rệt</span>
-                        <p className="text-xs md:text-sm font-semibold text-on-surface-variant mt-0.5">Kiểm tra đầu vào miễn phí, xếp lớp phù hợp trình độ. Theo dõi sát sao và báo cáo tiến độ định kỳ cho phụ huynh.</p>
+                        <span className="text-xs font-black text-on-surface uppercase tracking-wide">Lộ trình cá nhân hóa</span>
+                        <p className="text-[11px] font-semibold text-on-surface-variant mt-1.5 leading-relaxed">Kiểm tra đầu vào xếp lớp phù hợp. Theo dõi sát sao và báo cáo tiến độ định kỳ cho phụ huynh.</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 bg-red-50/50 p-4 rounded-2xl border border-red-100/40">
-                      <div className="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="flex flex-col items-start gap-3 bg-amber-50/50 p-5 rounded-2xl border border-amber-100/40 h-full">
+                      <div className="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center shrink-0">
                         <Brain className="w-4 h-4 text-amber-600" />
                       </div>
                       <div>
@@ -571,11 +645,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="bg-primary/5 rounded-2xl p-5 border border-primary/10 mt-2">
-                    <p className="italic text-base md:text-lg font-semibold text-primary leading-relaxed">
-                      "Mỗi học sinh đều có một tiềm năng riêng. Nhiệm vụ của chúng tôi là đánh thức tiềm năng ấy, giúp các em tự tin làm chủ ngoại ngữ và sẵn sàng mở cánh cửa bước tới tương lai."
-                    </p>
-                  </div>
+
                 </div>
               </div>
             </motion.div>
@@ -586,7 +656,7 @@ export default function App() {
               className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 bg-gradient-to-r from-primary via-secondary to-[#5C0A0F] rounded-3xl p-8 md:p-10 text-center shadow-xl"
             >
               <div className="flex flex-col gap-1">
-                <div className="font-lexend text-3xl md:text-4xl font-black text-yellow-300"><Counter end={10} />+</div>
+                <div className="font-lexend text-3xl md:text-4xl font-black text-yellow-300"><Counter end={15} />+</div>
                 <div className="text-[10px] md:text-xs uppercase font-bold text-white/60 tracking-widest">Năm kinh nghiệm</div>
               </div>
               <div className="flex flex-col gap-1">
@@ -1728,7 +1798,7 @@ export default function App() {
                   </div>
 
                   <a 
-                    href="https://www.facebook.com/profile.php?id=61572690107644" 
+                    href="https://www.facebook.com/share/1CJQEtgc5s/?mibextid=wwXIfr" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 hover:opacity-80 transition-opacity"
@@ -1819,7 +1889,7 @@ export default function App() {
               </div>
 
               <a 
-                href="https://www.facebook.com/profile.php?id=61572690107644" 
+                href="https://www.facebook.com/share/1CJQEtgc5s/?mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 group"
