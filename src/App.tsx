@@ -8,6 +8,7 @@ import { motion, useInView, AnimatePresence } from "motion/react";
 import learningAiImg from "./assets/images/learning_ai.png";
 import writingAiImg from "./assets/images/writing_ai.png";
 import speakingAiImg from "./assets/images/speaking_ai.png";
+import shadowingAiImg from "./assets/images/shadowing_ai.png";
 import courseEnglishBasic from "./assets/images/course_english_basic.png";
 import courseEnglishLostRoots from "./assets/images/course_english_lost_roots.png";
 import courseEnglishIelts from "./assets/images/course_english_ielts.png";
@@ -992,7 +993,7 @@ export default function App() {
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             >
               {[
                 { 
@@ -1021,6 +1022,15 @@ export default function App() {
                   color: "bg-emerald-600",
                   shadow: "shadow-emerald-500/30",
                   link: "https://mstrangspeak.vercel.app/"
+                },
+                { 
+                  icon: Headphones, 
+                  title: "Shadowing", 
+                  image: shadowingAiImg,
+                  desc: "Luyện nói tiếng Anh bằng phương pháp Shadowing – nghe và nhắc lại theo người bản ngữ từng câu.",
+                  color: "bg-violet-600",
+                  shadow: "shadow-violet-500/30",
+                  link: "https://shadowingenglish.com/"
                 }
               ].map((item, i) => (
                 <motion.a
