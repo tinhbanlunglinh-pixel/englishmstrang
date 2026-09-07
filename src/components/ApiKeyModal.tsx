@@ -17,7 +17,7 @@ function openUrl(url: string, e: React.MouseEvent) {
   e.stopPropagation();
   const win = window.open(url, '_blank', 'noopener,noreferrer');
   if (!win || win.closed || typeof win.closed === 'undefined') {
-    window.location.href = url;
+    alert("Trình duyệt của bạn đang chặn mở tab mới.\n\nVui lòng sử dụng nút 'Copy link' bên dưới, sau đó mở một tab mới và dán link vào để tiếp tục (không làm mất trang hiện tại).");
   }
 }
 
