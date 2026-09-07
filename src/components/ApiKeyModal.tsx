@@ -13,13 +13,6 @@ interface ApiKeyModalProps {
 const CLOUD_CONSOLE_URL = 'https://console.cloud.google.com/projectcreate';
 const AI_STUDIO_URL = 'https://aistudio.google.com/api-keys';
 
-function openUrl(url: string, e: React.MouseEvent) {
-  e.stopPropagation();
-  const win = window.open(url, '_blank', 'noopener,noreferrer');
-  if (!win || win.closed || typeof win.closed === 'undefined') {
-    alert("Trình duyệt của bạn đang chặn mở tab mới.\n\nVui lòng sử dụng nút 'Copy link' bên dưới, sau đó mở một tab mới và dán link vào để tiếp tục (không làm mất trang hiện tại).");
-  }
-}
 
 export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, onSave, onClose, hasEnvKey }) => {
   const [localKey, setLocalKey] = useState(currentApiKey);
@@ -147,15 +140,17 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
                       ))}
                     </div>
 
-                    {/* CTA button */}
-                    <button
-                      type="button"
-                      onClick={(e) => openUrl(CLOUD_CONSOLE_URL, e)}
+                    {/* CTA link */}
+                    <a
+                      href={CLOUD_CONSOLE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="flex items-center justify-center gap-2 w-full py-3.5 bg-green-600 hover:bg-green-700 active:scale-[0.98] text-white rounded-2xl font-black text-sm shadow-md transition-all"
                     >
                       <ExternalLink size={16} />
                       Mở Google Cloud Console → Tạo Project
-                    </button>
+                    </a>
 
                     {/* Copy link fallback */}
                     <button
@@ -199,14 +194,16 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
                       ))}
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={(e) => openUrl(AI_STUDIO_URL, e)}
+                    <a
+                      href={AI_STUDIO_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="flex items-center justify-center gap-2 w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white rounded-2xl font-black text-sm shadow-md transition-all"
                     >
                       <ExternalLink size={16} />
                       Mở Google AI Studio → Tạo API Key
-                    </button>
+                    </a>
 
                     <button
                       type="button"
