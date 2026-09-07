@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Zap, ChevronRight, ChevronLeft, Copy, Check, ExternalLink, KeyRound } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
 
 interface ApiKeyModalProps {
   show: boolean;
@@ -48,73 +47,63 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
 
   const steps = [
     { id: 1, label: 'Tạo Project', emoji: '☁️' },
-    { id: 2, label: 'Lấy API Key', emoji: '🔑' },
+    { id: 2, label: 'Lấy Key', emoji: '🔑' },
     { id: 3, label: 'Nhập Key', emoji: '✅' },
   ];
 
+  if (!show) return null;
+
   return (
-    <AnimatePresence>
-      {show && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4">
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/60 backdrop-blur-md"
-            onClick={() => { if (currentApiKey || hasEnvKey) onClose(); }}
-          />
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4">
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-md"
+        onClick={() => { if (currentApiKey || hasEnvKey) onClose(); }}
+      />
 
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative bg-white w-full max-w-md rounded-[2rem] shadow-2xl border-4 border-red-100 overflow-hidden"
-          >
-            {/* Header */}
-            <div className="bg-brand-red px-6 pt-6 pb-4 text-center">
-              <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Zap size={30} className="text-white animate-pulse" />
-              </div>
-              <h2 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight">
-                Cài đặt Gemini API Key
-              </h2>
-              <p className="text-white/80 text-xs mt-1">Miễn phí · Không giới hạn · Chỉ mất 2 phút</p>
+      {/* Modal */}
+      <div className="relative bg-white w-full max-w-md rounded-[2rem] shadow-2xl border-4 border-red-100 overflow-hidden animate-in fade-in zoom-in duration-200">
+        {/* Header */}
+        <div className="bg-brand-red px-6 pt-6 pb-4 text-center">
+          <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <Zap size={30} className="text-white" />
+          </div>
+          <h2 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight">
+            Cài đặt API Key
+          </h2>
+          <p className="text-white/80 text-xs mt-1">Miễn phí · Không giới hạn · Chỉ mất 2 phút</p>
 
-              {/* Step indicator */}
-              <div className="flex items-center justify-center gap-2 mt-4">
-                {steps.map((s, i) => (
-                  <React.Fragment key={s.id}>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setStep(s.id); }}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                        step === s.id
-                          ? 'bg-white text-brand-red shadow-md'
-                          : step > s.id
-                          ? 'bg-white/30 text-white'
-                          : 'bg-white/10 text-white/50'
-                      }`}
-                    >
-                      <span>{s.emoji}</span>
-                      <span className="hidden sm:inline">{s.label}</span>
-                      <span className="sm:hidden">{s.id}</span>
-                    </button>
-                    {i < steps.length - 1 && (
-                      <ChevronRight size={14} className="text-white/40" />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
+          {/* Step indicator */}
+          <div className="flex items-center justify-center gap-2 mt-4">
+            {steps.map((s, i) => (
+              <React.Fragment key={s.id}>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setStep(s.id); }}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                    step === s.id
+                      ? 'bg-white text-brand-red shadow-md'
+                      : step > s.id
+                      ? 'bg-white/30 text-white'
+                      : 'bg-white/10 text-white/50'
+                  }`}
+                >
+                  <span>{s.emoji}</span>
+                  <span className="hidden sm:inline">{s.label}</span>
+                  <span className="sm:hidden">{s.id}</span>
+                </button>
+                {i < steps.length - 1 && (
+                  <ChevronRight size={14} className="text-white/40" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
 
             {/* Content */}
             <div className="p-5 sm:p-6 space-y-4 max-h-[60vh] overflow-y-auto">
-              <AnimatePresence mode="wait">
-
                 {/* ── BƯỚC 1: Tạo Google Cloud Project ── */}
                 {step === 1 && (
-                  <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
+                  <div className="space-y-4 animate-in slide-in-from-right-4 fade-in duration-200">
                     <div className="flex items-start gap-3 p-4 bg-amber-50 border-2 border-amber-200 rounded-2xl">
                       <span className="text-2xl shrink-0">⚠️</span>
                       <div>
@@ -163,12 +152,12 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
                         : <><Copy size={13} /> Trình duyệt chặn? Nhấn đây để copy link</>
                       }
                     </button>
-                  </motion.div>
+                  </div>
                 )}
 
                 {/* ── BƯỚC 2: Lấy API Key từ AI Studio ── */}
                 {step === 2 && (
-                  <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
+                  <div className="space-y-4 animate-in slide-in-from-right-4 fade-in duration-200">
                     <div className="flex items-start gap-3 p-4 bg-blue-50 border-2 border-blue-200 rounded-2xl">
                       <span className="text-2xl shrink-0">🔑</span>
                       <div>
@@ -215,12 +204,12 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
                         : <><Copy size={13} /> Trình duyệt chặn? Nhấn đây để copy link</>
                       }
                     </button>
-                  </motion.div>
+                  </div>
                 )}
 
                 {/* ── BƯỚC 3: Nhập API Key ── */}
                 {step === 3 && (
-                  <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
+                  <div className="space-y-4 animate-in slide-in-from-right-4 fade-in duration-200">
                     <div className="flex items-start gap-3 p-4 bg-green-50 border-2 border-green-200 rounded-2xl">
                       <span className="text-2xl shrink-0">✅</span>
                       <div>
@@ -277,9 +266,8 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
                         Xem hướng dẫn lấy key từ đầu
                       </button>
                     </p>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
             </div>
 
             {/* Footer navigation */}
@@ -318,9 +306,8 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ show, currentApiKey, o
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      )}
-    </AnimatePresence>
+
   );
 };
